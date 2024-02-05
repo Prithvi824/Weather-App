@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+body {
+    background: #020205;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.loader {
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+}
+
+.content {
+    display: none;
+}
+
+.circles::before {
+    content: "";
+    position: absolute;
+    top: 12rem;
+    left: 4rem;
+    height: 150px;
+    width: 120px;
+    border-radius: 50%;
+    background: linear-gradient(270deg, #F6FDC3, #FF8080);
+    transform: translateY(100px);
+    animation: move 4s ease-in-out infinite alternate;
+}
+
+.circles::after {
+    content: "";
+    position: absolute;
+    top: 12rem;
+    right: 4rem;
+    height: 150px;
+    width: 120px;
+    border-radius: 50%;
+    background: linear-gradient(120deg, #40A2E3, #FFF6E9);
+    transform: translateY(-100px);
+    animation: move 4s ease-in-out infinite alternate-reverse;
+}
+
+.hero {
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
+}
+
+.custom-text {
+    font-size: larger;
+    letter-spacing: 2px;
+}
+
+.card {
+    background: rgba(23, 25, 46, 0.1);
+    /* box-shadow: 2px 4px 16px 0 rgba(124, 125, 128, 0.37); */
+    box-shadow: inset -2px -3px 20px 0px rgba(124, 125, 128, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-left: 8px;
+    padding-bottom: 12px;
+    border-radius: 12px;
+    width: 112px;
+}
+
+.bg-custom {
+    background: rgba(23, 25, 46, 0.1);
+    box-shadow: inset -2px -3px 20px 0px rgba(124, 125, 128, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
+}
+
+.bottom-animate {
+    position: relative;
+}
+
+.bottom-animate::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background-color: white;
+    border-radius: 20px;
+    transition: width 0.4s;
+}
+
+.bottom-animate:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+/* .type-2::before {
+    content: "";
+    position: absolute;
+    top: 12rem;
+    left: 4rem;
+    height: 150px;
+    width: 120px;
+    border-radius: 50%;
+    background: linear-gradient(270deg, #d1ec00, #FF8080);
+    transform: translateY(100px);
+    animation: move 4s ease-in-out infinite alternate;
+}
+
+ */
+
+@keyframes move {
+    0% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(100px);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .mobile {
+        display: none;
+    }
+
+    .card {
+        margin-left: 16px;
+        width: 150px;
+        font-size: x-large;
+        padding-bottom: 24px;
+    }
+
+    .circles::after {
+        width: 320px;
+        height: 270px;
+    }
+
+    .circles::before {
+        width: 320px;
+        height: 270px;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 1024px) {
+
+    .circles::after,
+    .circles::before {
+        width: 400px;
+        height: 270px;
+    }
+
+    .circles::after {
+        right: 18rem;
+    }
+
+    .circles::before {
+        left: 18rem;
+    }
+}

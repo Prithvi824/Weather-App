@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/tailwind.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="/static/js/weather.js"></script>
+    <link rel="icon" href="/static/img/weather.png" type="image/png" />
+    <title>Weather App</title>
+  </head>
+  <body class="overflow-x-hidden">
+    <div class="loader flex flex-col justify-center items-center">
+      <img src="/static/img/loader.gif" alt="" class="w-52" />
+      <p class="text-white text-lg -mt-16">Please Allow Location!!</p>
+    </div>
+    <div class="content">
+      <span class="circles"></span>
+      <main class="hero h-screen w-screen">
+        <nav class="w-full flex justify-between">
+          <ul class="navigation pt-4 gap-8 pl-6 md:flex hidden">
+            <li>
+              <a
+                href="https://github.com/Prithvi824/Weather-App"
+                class="flex flex-row items-center h-12 transform text-gray-200"
+              >
+                <span class="text-xl font-medium bottom-animate"
+                  >Source code</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://prithvi824.github.io"
+                class="flex flex-row items-center h-12 transform text-gray-200"
+              >
+                <span class="text-xl font-medium bottom-animate"
+                  >About Developer</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:prithvisr824@gmail.com"
+                class="flex flex-row items-center h-12 transform text-gray-200"
+              >
+                <span class="text-xl font-medium bottom-animate"
+                  >Get in Touch</span
+                >
+              </a>
+            </li>
+          </ul>
+          <div class="mobile relative">
+            <i
+              class="bx bx-menu-alt-left text-white text-4xl pt-4 pl-4 menu-btn-open"
+            ></i>
+            <div
+              class="menu min-h-screen flex-row absolute top-0 left-0 flex w-64 -translate-x-72 transition-all ease-in duration-300"
+            >
+              <div
+                class="flex flex-col w-full bg-custom rounded-r-3xl overflow-hidden"
+              >
+                <div
+                  class="flex items-center justify-center h-20 shadow-md relative"
+                >
+                  <h1 class="text-3xl uppercase text-indigo-500">Menu</h1>
+                  <i
+                    class="bx bx-x text-white text-4xl absolute right-3 top-6 menu-btn-close"
+                  ></i>
+                </div>
+                <ul class="flex flex-col py-4">
+                  <li>
+                    <a
+                      href="https://github.com/Prithvi824/Weather-App"
+                      class="flex flex-row items-center h-12 transform text-gray-200"
+                    >
+                      <span
+                        class="inline-flex items-center justify-center h-12 w-12 text-gray-200"
+                        ><i class="bx bxl-github text-xl"></i
+                      ></span>
+                      <span class="text-lg font-medium">Source code</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://prithvi824.github.io"
+                      class="flex flex-row items-center h-12 transform text-gray-200"
+                    >
+                      <span
+                        class="inline-flex items-center justify-center h-12 w-12 text-gray-200"
+                        ><i class="bx bx-happy-beaming text-xl"></i
+                      ></span>
+                      <span class="text-lg font-medium">About Developer</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:prithvisr824@gmail.com"
+                      class="flex flex-row items-center h-12 transform text-gray-200"
+                    >
+                      <span
+                        class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-420"
+                        ><i class="bx bx-envelope text-xl"></i
+                      ></span>
+                      <span class="text-lg font-medium">Get in Touch</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <a href="https://github.com/prithvi824">
+            <i class="bx bxl-github text-white text-4xl pr-4 pt-4"></i
+          ></a>
+        </nav>
+        <article class="w-full text-white">
+          <div class="flex flex-col justify-center items-center">
+            <h1 class="pt-6 md:text-2xl city-name">Mumbai, India</h1>
+            <img src="/static/img/113.svg" alt="" class="w-56 city-temp-img" />
+            <h2 class="text-4xl font-mono city-temp">29°c</h2>
+            <p class="text-lg tracking-wider pt-2 city-weather-text">
+              Expect high rain
+            </p>
+
+            <div
+              class="flex justify-evenly items-center w-full pt-5 pb-6 md:w-1/2"
+            >
+              <div class="flex justify-center items-center gap-2">
+                <i class="bx bx-wind text-lg"></i>
+                <p class="custom-text wind-speed">11km</p>
+              </div>
+              <div class="flex justify-center items-center gap-2">
+                <i class="bx bxs-droplet text-lg"></i>
+                <p class="custom-text percipitation">8%</p>
+              </div>
+              <div class="flex justify-center items-center gap-2">
+                <i class="bx bxs-sun text-lg"></i>
+                <p class="custom-text sunrise">5:03 Am</p>
+              </div>
+            </div>
+
+            <div class="w-full flex justify-start items-center pb-3">
+              <i class="bx bx-time pr-2 pl-4 text-xl md:pl-12"></i>
+              <h1 class="text-lg font-semibold">Hourly Forecast</h1>
+            </div>
+            <section
+              class="overflow-x-auto whitespace-nowrap snap-x w-full md:pl-6 lg:pb-12 hourly-wrapper"
+            >
+              <div class="inline-block snap-center"></div>
+            </section>
+          </div>
+        </article>
+      </main>
+    </div>
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
