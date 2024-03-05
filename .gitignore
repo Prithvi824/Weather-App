@@ -1,6 +1,11 @@
 Include/
 Lib/
 Scripts/
+node_modules/
+package-lock.json
+package.json
+tailwind.config.js
 .env
 pyvenv.cfg
 * text eol=lf
+static/css/input.css
